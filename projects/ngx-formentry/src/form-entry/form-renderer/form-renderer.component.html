@@ -233,6 +233,7 @@
             [max]="node.question.extras.questionOptions.max"
             [formControlName]="node.question.key"
             [attr.placeholder]="node.question.placeholder"
+            [questionHint]="node.question.extras?.questionOptions?.questionHint"
           >
           </number-input>
 
@@ -320,18 +321,17 @@
           </div>
         </div>
       </ng-template>
-
       <div
         class="question-info col-md-12 col-lg-12 col-sm-12"
         id="{{ node.question.extras.id }}"
         *ngIf="
           node.question &&
-          node.question.extras.questionInfo &&
-          node.question.extras.questionInfo !== '' &&
-          node.question.extras.questionInfo !== ' '
+          node.question.extras.questionHint &&
+          node.question.extras.questionHint !== '' &&
+          node.question.extras.questionHint !== ' '
         "
       >
-        {{ node.question.extras.questionInfo }}
+        {{ node.question.extras.questionHint }}
       </div>
     </div>
   </div>

@@ -46,4 +46,5 @@
     <ng-container *ngIf="!isTemplate(warnText)">{{ warnText }}</ng-container>
     <ng-template *ngIf="isTemplate(warnText)" [ngTemplateOutlet]="warnText"></ng-template>
   </div>
+  <span style="color: blue;" class="text-danger caret">{{questionHint}}</span>
 </div>

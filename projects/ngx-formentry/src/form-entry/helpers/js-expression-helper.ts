@@ -1,6 +1,9 @@
 import * as _ from 'lodash';
 import { Injectable } from "@angular/core";
-@Injectable()
+import * as moment_ from 'moment';
+
+const moment = moment_;
+
 export class JsExpressionHelper {
   calcBMI(height, weight) {
     let r;

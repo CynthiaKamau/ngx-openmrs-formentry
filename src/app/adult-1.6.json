@@ -271,14 +271,6 @@
 	"pages": [
 		{
 			"label": "Encounter Details",
-			"componentConfigs": [
-				{
-					"tag": "afe-content-display",
-					"url": "http://localhost:4200/lib/web-components.bundled.js?module",
-					"module": "true",
-					"detail": "This is custom component within a page it is displayed at the top of the page"
-				}
-			],
 			"sections": [
 				{
 					"label": "Encounter Details",
@@ -351,6 +343,123 @@
 								"url": "http://localhost:4200/lib/web-components.bundled.js?module",
 								"module": "true"
 							}
+						},
+						{
+							"tag": "afe-content-radio",
+							"url": "http://localhost:4200/lib/web-components.bundled.js?module",
+							"module": "true",
+							"detail": "This TEST is custom component within a page it is displayed at the top of the page",
+							"type": "obs",
+							"label": "Custom Control Test 2:",
+							"id": "customConRadio",
+							"required": "true",
+							"default": "",
+							"questionOptions": {
+								"rendering": "input",
+								"customControl": true,
+								"answers": [
+									{
+										"label": "Severe acute malnutrition",
+										"concept": "163302"
+									}, {
+										"label": "Moderate acute malnutrition",
+										"concept": "163303"
+									}, {
+										"label": "Normal",
+										"concept": "1115"
+									}, {
+										"label": "Overweight/Obese",
+										"concept": "114413"
+									}
+								]
+							},
+							"customControlConfig": {
+								"tag": "afe-content-radio",
+								"url": "http://localhost:4200/lib/web-components.bundled.js?module",
+								"module": "true"
+							}
+						},
+						{
+							"tag": "afe-content-hts-final",
+							"url": "http://localhost:4200/lib/web-components.bundled.js?module",
+							"module": "true",
+							"detail": "This TEST is custom component within a page it is displayed at the top of the page",
+							"type": "obs",
+							"extras": {
+								"type": "obs",
+								"label": "HTS Initial Test Results",
+								"id": "customConHtsTest",
+								"required": "true",
+								"default": "",
+								"questionOptions": {
+								  "rendering": "select",
+								  "customControl": true,
+								  "answers": [{
+									"label": "Positive",
+									"concept": "703"
+								  }, {
+									"label": "Negative",
+									"concept": "664"
+								  }, {
+									"label": "Invalid",
+									"concept": "1067"
+								  }]
+								},
+								"customControlConfig": {
+								  "tag": "afe-content-hts-final",
+								  "url": "http://localhost:4200/lib/web-components.bundled.js?module",
+								  "module": "true"
+								}
+							},
+							"renderingType": "select",
+							"key": "customConHtsTest",
+							"label": "Custom Control HTS Test ",
+							"validators": [],
+							"required": "true",
+							"options": [{
+									"label": "Positive",
+									"concept": "703"
+							}, {
+								"label": "Negative",
+								"concept": "664"
+							}, {
+								"label": "Invalid",
+								"concept": "1067"
+							}],
+							"controlType": 0,
+							"dataSource": "",
+							"conponentConfigs": [],
+							"customControlConfig": {
+								"tag": "afe-content-hts-final",
+								"url": "http://localhost:4200/lib/web-components.bundled.js?module",
+								"module": "true"
+							}
+						},
+						{
+							"type": "obs",
+							"label": "Custom Control Test 3:",
+							"id": "customTest3",
+							"required": "true",
+							"default": "",
+							"questionOptions": {
+							  "rendering": "select",
+							  "custom-control": true,
+							  "answers": [
+								{
+								  "concept": "8b715fed-97f6-4e38-8f6a-c167a42f8923",
+								  "label": "yes"
+								},
+								{
+								  "concept": "a899e0ac-1350-11df-a1f1-0026b9348838",
+								  "label": "No"
+								}
+							  ]
+							},
+							"customControlConfig": {
+							  "tag": "afe-content-display",
+							  "url":"http://localhost:4200/lib/web-components.bundled.js?module",
+							  "module": "true"
+							}
 						}
 					]
 				}
@@ -418,6 +527,7 @@
 						{
 							"label": "Patient covered by NHIF:",
 							"id": "nhif",
+							"questionInfo": "Question Information is here",
 							"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('0b49e3e6-55df-4096-93ca-59edadb74b3f')) ? undefined : HD.getObject('prevEnc').getValue('0b49e3e6-55df-4096-93ca-59edadb74b3f')",
 							"questionOptions": {
 								"rendering": "select",
@@ -3830,7 +3940,8 @@
 								"rendering": "number",
 								"concept": "a8a65e36-1350-11df-a1f1-0026b9348838",
 								"max": "200",
-								"min": "0"
+								"min": "0",
+								"questionHint": "Temperature should be less than 120 mm Hg"
 							},
 							"type": "obs",
 							"validators": []
@@ -3844,16 +3955,16 @@
 								"min": "0"
 							},
 							"type": "obs",
+							"historicalExpression": "HD.getObject('prevEnc').getValue('a8a65f12-1350-11df-a1f1-0026b9348838')",
 							"validators": [],
 							"id": "__uIC58G0rw"
 						},
 						{
-							"label": "Temp (C):",
+							"label": "Temp (C) :",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "a8a65fee-1350-11df-a1f1-0026b9348838",
-								"max": "43",
-								"min": "25"
+								"questionHint": "Temperature should be between 36.1 and 37.2"
 							},
 							"type": "obs",
 							"validators": [],

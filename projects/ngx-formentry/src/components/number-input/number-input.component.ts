@@ -34,7 +34,7 @@ export class NumberChangeEvent {
     }
   ]
 })
-export class NumberInputComponent implements ControlValueAccessor {
+export class NumberInputComponent implements ControlValueAccessor  {
   /**
    * Variable used for creating unique ids for number input components.
    */
@@ -132,6 +132,8 @@ export class NumberInputComponent implements ControlValueAccessor {
   @Input() incrementLabel = 'Increase';
 
   protected _value = 0;
+
+  @Input() questionHint: string | TemplateRef<any>;
 
   /**
    * Creates an instance of `Number`.
