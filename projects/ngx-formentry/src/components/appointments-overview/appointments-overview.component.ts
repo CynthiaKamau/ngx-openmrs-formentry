@@ -25,9 +25,9 @@ export class AppointmentsOverviewComponent implements OnChanges {
       if (
         node.question.extras.questionOptions.concept &&
         (node.question.extras.questionOptions.concept ===
-          'a8a666ba-1350-11df-a1f1-0026b9348838' ||
+          '5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ||
           node.question.extras.questionOptions.concept ===
-            'a89d2398-1350-11df-a1f1-0026b9348838')
+            '5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
       ) {
         if (!this.showAppointments) {
           this.loadingAppointments = true;
